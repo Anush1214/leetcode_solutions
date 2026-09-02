@@ -1,16 +1,9 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        d={}
-        for i in range(len(nums)):
-            num=nums[i]
-            complement=target-num
-
-            if complement in d:
-                return [d[complement],i]
-
-            d[num]=i
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        mp={}
+        for i,num in enumerate(nums):
+            comp=target-num
+            if comp in mp:
+                return [mp[comp],i]
+            mp[num]=i
+        return [-1,-1]
