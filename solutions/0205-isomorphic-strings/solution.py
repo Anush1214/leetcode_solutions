@@ -8,15 +8,13 @@ class Solution(object):
         d1={}
         d2={}
         for i in range(len(s)):
-            if s[i] in d1:
-                if d1[s[i]] != t[i]:
-                    return False
-            else:
-                d1[s[i]]=t[i]
-            if t[i] in d2:
-                if d2[t[i]] != s[i]:
-                    return False
-            else:
-                d2[t[i]]=s[i]
-        return True
+            char_t=s[i]
+            char_s=t[i]
 
+            if char_s in d1 and d1[char_s]!=char_t:
+                return False
+            if char_t in d2 and d2[char_t]!=char_s:
+                return False
+            d1[char_s]=char_t
+            d2[char_t]=char_s
+        return True
